@@ -61,6 +61,7 @@ class Exp_Informer(Exp_Basic):
         args = self.args
 
         data_dict = {
+            'Respiratory':Dataset_Custom,
             'ETTh1':Dataset_ETT_hour,
             'ETTh2':Dataset_ETT_hour,
             'ETTm1':Dataset_ETT_minute,
