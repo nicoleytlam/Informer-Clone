@@ -36,3 +36,14 @@ python -u main_informer.py --model informer --data Respiratory --root_path ./dat
 
 # Test 13: MSE:0.013456298969686031 (Patient 4, 5000 datapoints, 0.2 seconds forward, epochs 6)
 python -u main_informer.py --model informer --data Respiratory --root_path ./data/ --freq s --data_path Respiratory5000/4.csv --seq_len 300 --c_out 1 --enc_in 1 --pred_len 4 --dec_in 1 --target Amplitude --features S --itr 1 --train_epochs 6 --patience 30
+
+# Test 14: MSE: 0.01542080007493496 (Patient 4, 5000 datapoints, 0.2 seconds forward, epochs 6)
+python -u main_informer.py --model informer --data Respiratory --root_path ./data/ --freq s --data_path RespiratoryPhase5000/4.csv --seq_len 300 --c_out 1 --enc_in 2 --pred_len 4 --dec_in 2 --target Amplitude --features MS --itr 1 --train_epochs 6 --patience 30
+
+# Test 15: MSE: 0.007933013141155243 (Patient 4, 5000 datapoints, 0.1 seconds forward, epochs 6, phase)
+python -u main_informer.py --model informer --data Respiratory --root_path ./data/ --freq s --data_path RespiratoryPhase5000/4.csv --seq_len 300 --c_out 1 --enc_in 2 --pred_len 2 --dec_in 2 --target Amplitude --features MS --itr 1 --train_epochs 6 --patience 30
+
+# Test 16: MSE: 0.016265826299786568 (Patient 4, 5000 datapoints, 0.05 seconds forward, epochs 6, phase)
+python -u main_informer.py --model informer --data Respiratory --root_path ./data/ --freq s --data_path RespiratoryPhase5000/4.csv --seq_len 300 --c_out 1 --enc_in 2 --pred_len 1 --dec_in 2 --target Amplitude --features MS --itr 1 --train_epochs 6 --patience 30
+
+python -u main_informer.py --model informer --data Respiratory --root_path ./data/ --freq y --data_path Respiratory2000/4.csv --seq_len 20 --c_out 1 --enc_in 1 --pred_len 1 --dec_in 1 --target Amplitude --features S --itr 1 --train_epochs 1 --patience 30 --embed fixed
